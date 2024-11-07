@@ -1,4 +1,4 @@
-import Movies from "./schemas/moviesSchema.js";
+import Movies from "./schemas/movieSchema.js";
 import mongoose from "mongoose";
 
 export const getAllMovies = async () => {

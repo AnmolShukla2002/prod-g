@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { DB_NAME } from "./constants.js";
 import participants from "./controllers/participantController.js";
+import movies from "./controllers/movieController.js";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.get("/ping", (req, res) => {
 });
 
 app.use("/participants", participants);
+app.use("/movies", movies);
 
 await connect(DB_NAME);
 

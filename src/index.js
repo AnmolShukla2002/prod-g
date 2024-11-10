@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { DB_NAME } from "./constants.js";
 import participants from "./controllers/participantController.js";
 import movies from "./controllers/movieController.js";
+import { removeResponseHeaders } from "./middlewares/removeResponseHeaders.js";
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(removeResponseHeaders);
 
 const PORT = process.env.PORT || 8000;
 
